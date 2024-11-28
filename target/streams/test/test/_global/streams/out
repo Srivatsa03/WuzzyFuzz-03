@@ -1,4 +1,4 @@
-[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(wuzzyfuzz.WuzzyFuzzTests, org.scalatest.tools.Framework$$anon$1@a88fa4f, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(wuzzyfuzz.WuzzyFuzzTests, org.scalatest.tools.Framework$$anon$1@4194a847, false, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mWuzzyFuzzTests:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32mMy WuzzyFuzz Language for Homework 1, Homework 2, and Homework 3[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy union correctly[0m[0m
@@ -31,7 +31,7 @@
 [0m[[0m[0minfo[0m] [0m[0m[32m- should handle advanced partial evaluation with simplified nested expressions[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should test fuzzy gate evaluation within a scope[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate conditional expressions when variables are undefined[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 280 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 278 milliseconds.[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 30[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 30, failed 0, canceled 0, ignored 0, pending 0[0m[0m
