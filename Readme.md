@@ -267,10 +267,10 @@ You can create fuzzy sets with elements mapped to their membership values:
 ```scala
 val setA = FuzzySet("A", Map("x1" -> 0.3, "x2" -> 0.9))
 val setB = FuzzySet("B", Map("x1" -> 0.6, "x2" -> 0.7))
-
+```
 ## Applying Gates
 Use gates like `UnionGate`, `IntersectionGate`, and others to operate on fuzzy sets:
-```
+
 ```scala
 val unionGate = new UnionGate()
 val assign = Assign(unionGate, Left(setA))
