@@ -16,44 +16,57 @@ class WuzzyFuzzTests extends AnyFlatSpec with Matchers {
 
   // ==== Homework 1 & 2 Tests: Basic Fuzzy Operations and OOP Features ====
   it should "perform fuzzy union correctly" in {
-    // Union of setA and setB should take the maximum membership value for each element
+    // The union operation takes the maximum membership value for each element
     val result = setA.eval(FuzzyOperation.Union, setB).elements
+    // Expected result: maximum of {x1: 0.3 vs 0.6, x2: 0.9 vs 0.7}
     result shouldBe Map("x1" -> 0.6, "x2" -> 0.9)
   }
 
+  // Test the intersection operation between two fuzzy sets
   it should "perform fuzzy intersection correctly" in {
-    // Intersection should yield the minimum membership value for each element
+    // The intersection operation takes the minimum membership value for each element
     val result = setA.eval(FuzzyOperation.Intersection, setB).elements
+    // Expected result: minimum of {x1: 0.3 vs 0.6, x2: 0.9 vs 0.7}
     result shouldBe Map("x1" -> 0.3, "x2" -> 0.7)
   }
 
+  // Test the complement operation on a fuzzy set
   it should "perform fuzzy complement correctly" in {
-    // Complement should invert each membership value by subtracting it from 1
+    // The complement operation subtracts each membership value from 1
     val result = setA.eval(FuzzyOperation.Complement).elements
+    // Expected result: {x1 -> 1 - 0.3 = 0.7, x2 -> 1 - 0.9 = 0.1}
     result shouldBe Map("x1" -> 0.7, "x2" -> 0.1)
   }
 
+  // Test the addition operation between two fuzzy sets
   it should "perform fuzzy addition correctly" in {
-    // Addition should sum values, but cap each result at 1
+    // The addition operation sums the membership values, capping each result at 1
     val result = setA.eval(FuzzyOperation.Addition, setB).elements
+    // Expected result: {x1 -> min(0.3 + 0.6, 1.0), x2 -> min(0.9 + 0.7, 1.0)}
     result shouldBe Map("x1" -> 0.9, "x2" -> 1.0)
   }
 
+  // Test the multiplication operation between two fuzzy sets
   it should "perform fuzzy multiplication correctly" in {
-    // Multiplication should multiply each membership value between the two sets
+    // The multiplication operation multiplies the membership values for each element
     val result = setA.eval(FuzzyOperation.Multiplication, setB).elements
+    // Expected result: {x1 -> 0.3 * 0.6 = 0.18, x2 -> 0.9 * 0.7 = 0.63}
     result shouldBe Map("x1" -> 0.18, "x2" -> 0.63)
   }
 
+  // Test the XOR operation between two fuzzy sets
   it should "perform fuzzy XOR correctly" in {
-    // XOR should compute the absolute difference for each element's membership values
+    // The XOR operation calculates the absolute difference of the membership values
     val result = setA.eval(FuzzyOperation.XOR, setB).elements
+    // Expected result: {x1 -> |0.3 - 0.6| = 0.3, x2 -> |0.9 - 0.7| = 0.2}
     result shouldBe Map("x1" -> 0.3, "x2" -> 0.2)
   }
 
+  // Test the alpha cut operation on a fuzzy set
   it should "perform alpha cut correctly" in {
-    // Alpha cut should filter out elements with membership values below the threshold (0.7 in this case)
+    // The alpha cut operation filters out elements with membership values below the threshold
     val result = setA.alphaCut(0.7).elements
+    // Expected result: Only elements with membership >= 0.7 are retained
     result shouldBe Map("x2" -> 0.9)
   }
 
@@ -176,16 +189,10 @@ class WuzzyFuzzTests extends AnyFlatSpec with Matchers {
   }
 
   it should "dynamically dispatch methods from derived class and resolve superclass method if not found in derived class" in {
-    // Define a base class with a method and a derived class with its own method
     val baseClass = Class(
       "Base",
       methods = Map(
-        "m2" -> Method(
-          "m2",
-          List(),
-          List(Assign(new UnionGate(), Left(FuzzySet("BaseSet", Map("x1" -> 0.5))))), // Wrap FuzzySet in Left
-          VarType("int")
-        )
+        "m2" -> Method("m2", List(), List(Assign(new UnionGate(), Left(FuzzySet("BaseSet", Map("x1" -> 0.5))))), VarType("fuzzySet"))
       )
     )
 
@@ -193,26 +200,20 @@ class WuzzyFuzzTests extends AnyFlatSpec with Matchers {
       "Derived",
       superclass = Some(baseClass),
       methods = Map(
-        "m1" -> Method(
-          "m1",
-          List(Parameter("p1", VarType("int"))),
-          List(Assign(new UnionGate(), Left(FuzzySet("DerivedSet", Map("x1" -> 0.7))))), // Wrap FuzzySet in Left
-          VarType("int")
-        )
+        "m1" -> Method("m1", List(Parameter("p1", VarType("fuzzySet"))), List(Assign(new UnionGate(), Left(FuzzySet("DerivedSet", Map("x1" -> 0.7))))), VarType("fuzzySet"))
       )
     )
 
-    // Invoke methods from derived and base classes
     val derivedInstance = ClassInstance(derivedClass)
     val scope = new Scope()
     val methodInvoker = new MethodInvocation(derivedInstance, scope)
 
-    // Wrap the method parameter in Right to represent it as a partial evaluation (String)
-    val result1 = methodInvoker.invokeMethod("m1", Map("p1" -> Right("5"))) // Use Right for method parameter
-    result1 shouldBe Left(FuzzySet("DerivedSet Union DerivedSet", Map("x1" -> 0.7))) // Wrap expected result in Left
+    // Fix: Pass a FuzzySet instead of Value
+    val result1 = methodInvoker.invokeMethod("m1", Map("p1" -> Left(FuzzySet("ParamSet", Map("x1" -> 5.0)))))
+    assert(result1 == Left(FuzzySet("DerivedSet Union DerivedSet", Map("x1" -> 0.7)))) // Check derived class result
 
     val result2 = methodInvoker.invokeMethod("m2", Map())
-    result2 shouldBe Left(FuzzySet("BaseSet Union BaseSet", Map("x1" -> 0.5))) // Wrap expected result in Left
+    assert(result2 == Left(FuzzySet("BaseSet Union BaseSet", Map("x1" -> 0.5)))) // Check superclass result
   }
 
   it should "apply alpha cut to method results" in {
@@ -427,7 +428,7 @@ class WuzzyFuzzTests extends AnyFlatSpec with Matchers {
     )
 
     // Expected partially evaluated result
-    val expected = Left("THEN branch executed successfully") // Adjust if logic determines otherwise
+    val expected = Left("THEN branch executed successfully")
 
     println(s"Conditional expression partial evaluation result: $partialResult")
     assert(partialResult == expected)

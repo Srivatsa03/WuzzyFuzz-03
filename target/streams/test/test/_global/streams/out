@@ -1,0 +1,40 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(wuzzyfuzz.WuzzyFuzzTests, org.scalatest.tools.Framework$$anon$1@a88fa4f, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mWuzzyFuzzTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMy WuzzyFuzz Language for Homework 1, Homework 2, and Homework 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy union correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy intersection correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy complement correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy addition correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy multiplication correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform fuzzy XOR correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should perform alpha cut correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should instantiate classes and inherit variables correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should invoke methods and return the correct values from the derived class[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should correctly resolve variables in nested and outer classes[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should invoke methods in nested classes correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should apply fuzzy gates with scoped variables[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should dynamically dispatch methods from derived class and resolve superclass method if not found in derived class[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should apply alpha cut to method results[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate Union gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate Intersection gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate Complement gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate Addition gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate Multiplication gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate XOR gate correctly[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate expressions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate complex expressions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should fully evaluate expressions when all variables are defined in scope[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should resolve and evaluate fuzzy gates when fully defined[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should evaluate conditional constructs with THEN and ELSE branches[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate conditional constructs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should test partial evaluation for gates with unresolved inputs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should handle advanced partial evaluation with simplified nested expressions[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should test fuzzy gate evaluation within a scope[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should partially evaluate conditional expressions when variables are undefined[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 280 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 30[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 30, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	wuzzyfuzz.WuzzyFuzzTests[0m

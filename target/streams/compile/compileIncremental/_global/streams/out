@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
+[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 48 products, 12 sources, 2 libraries[0m
+[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/wuzzyfuzz/WuzzyFuzz.scala, ${BASE}/src/main/scala/wuzzyfuzz/Scope.scala, ${BASE}/src/main/scala/wuzzyfuzz/PartialEvaluation.scala, ${BASE}/src/main/scala/wuzzyfuzz/MethodInvocation.scala, ${BASE}/src/main/scala/wuzzyfuzz/TestGate.scala, ${BASE}/src/main/scala/wuzzyfuzz/FuzzyGate.scala, ${BASE}/src/main/scala/wuzzyfuzz/ClassDefiniton.scala, ${BASE}/src/main/scala/wuzzyfuzz/Conditional.scala, ${BASE}/src/main/scala/wuzzyfuzz/Assign.scala, ${BASE}/src/main/scala/wuzzyfuzz/NestedClass.scala, ${BASE}/src/main/scala/wuzzyfuzz/FuzzySet.scala, ${BASE}/src/main/scala/wuzzyfuzz/FuzzyOperation.scala)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
+[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
