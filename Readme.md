@@ -344,5 +344,3 @@ This homework demonstrates the creation and implementation of a custom Domain-Sp
 - **Scoped Variable Resolution**: Ensuring variables are properly managed and accessible within their defined scopes.
 - **Dynamic Method Invocation**: Facilitating runtime evaluation of fuzzy logic constructs.
 - **Systematic Partial Evaluation**: Handling incomplete inputs with a structured approach.
-
-The DSL’s design prioritizes flexibility, modularity, and clarity. Comprehensive testing and detailed documentation have been provided to showcase its functionality and extendability. This implementation meets all specified requirements and serves as a robust framework for fuzzy logic computation.
