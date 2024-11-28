@@ -235,7 +235,7 @@ val condition = Conditional(
 ### 1. Clone the repository:
 ```
 git clone https://github.com/Srivatsa03/WuzzyFuzz-03.git
-cd WuzzyFuzz-02
+cd WuzzyFuzz-03
 ```
 ### 2. Compile the Project:
 ```
@@ -254,7 +254,7 @@ sbt run
 //Select or Create a Repository Where do you want to deploy this WuzzyFuzz Repository 
 // Next, Go to Command Line, type out 
 git clone  https://github.com/Srivatsa03/WuzzyFuzz-02.git
-cd WuzzyFuzz-02
+cd WuzzyFuzz-03
 sbt clean compile run
 sbt clean compile test 
 ```
