@@ -3,8 +3,6 @@
 ### <u>_Email: skamb10@uic.edu_</u>
 ## Programming Language Design - Homework - 03
 
-# WuzzyFuzz: A DSL for Fuzzy Logic with Object-Oriented Extensions
-
 # WuzzyFuzz Homework 3
 
 ## Overview
